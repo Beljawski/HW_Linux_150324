@@ -1,0 +1,56 @@
+#!/bin/bash
+set -e
+echo "Hello Student!"
+echo "Enter your name:"
+read name
+echo "Welcome to terminal $name"
+mkdir -p /tmp/test
+date +'%T' > /tmp/mydate.txt
+echo "Сохраняем данные"
+for run in {1..10}
+do
+        echo $run
+        sleep 0.5
+done
+echo “Data saved. continue work”
+df -h >> /tmp/mydate.txt
+mkdir -p /opt/mydate
+cp /tmp/mydate.txt /opt/mydate/newmydate.txt
+for run in {1..5}
+do
+        echo $run
+        sleep 1
+done
+echo "Well done Boss"
+localhost:~# ls -la /tmp
+total 16
+drwxrwxrwt    3 root     root            85 Jan  9  2021 .
+drwxrwxrwx   21 root     root           461 Mar 20 16:33 ..
+-rw-r--r--    1 root     root             9 Mar 20 16:32 mydate.txt
+drwxr-xr-x    2 root     root            37 Mar 20 16:30 test
+localhost:~# cat /tmp/mydate.txt
+16:32:02
+localhost:~# mv fullscript.sh /bin/maria
+localhost:~# maria
+Hello Student!
+Enter your name:
+Maria
+Welcome to terminal Maria
+Сохраняем данные
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+“Data saved. continue work”
+1
+2
+3
+4
+5
+Well done Boss
